@@ -15,9 +15,9 @@ USER appuser
 
 EXPOSE 8080
 
-COPY --from=build /home/gradle/src/build/libs/profile-management-0.0.1-SNAPSHOT.jar ./profile-management.jar
+COPY --from=build /home/gradle/src/build/libs/profiles-management-0.0.1-SNAPSHOT.jar ./profiles-management.jar
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s \
   CMD wget --quiet --tries=1 --spider http://localhost:8080/actuator/health || exit 1
 
-ENTRYPOINT ["java", "-Xms256m","-Xmx512m", "-jar", "/app/profile-management.jar"]
+ENTRYPOINT ["java", "-Xms256m","-Xmx512m", "-jar", "/app/profiles-management.jar"]

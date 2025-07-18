@@ -3,7 +3,7 @@ spring:
     url: ${DB_URL}
     driver-class-name: org.postgresql.Driver
   application:
-    name: profile-management
+    name: profiles-management
   jpa:
     hibernate:
       ddl-auto: update
